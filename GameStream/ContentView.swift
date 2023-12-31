@@ -24,7 +24,7 @@ struct ContentView: View {
                 
                 LoginView()
             
-            }
+            }.padding(.horizontal, 25)
            
         }
     }

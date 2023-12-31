@@ -20,7 +20,7 @@ struct LoginView: View {
         VStack {
             HStack {
                 
-                Spacer()
+                
                 Button("INICIA SESIÓN") {
                     tipoInicioSession = .inicioSession
                 }.foregroundColor(
@@ -33,13 +33,12 @@ struct LoginView: View {
                     tipoInicioSession = .registroSession
                 }.foregroundColor( self.tipoInicioSession == .inicioSession ? .gray : .white)
             
-                Spacer()
             }
             
             Spacer(minLength: 42)
             
             switch tipoInicioSession {
-            case .inicioSession:  LoginChildView()
+            case .inicioSession:  InicioSessionView()
             case .registroSession: RegistroView()
                 
             }
