@@ -11,7 +11,7 @@ struct InicioSessionView: View {
     @State var correo = ""
     @State var password = ""
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 Text("Correo Electrónico").foregroundColor(Color("Dark-Cian"))
                 
@@ -23,6 +23,7 @@ struct InicioSessionView: View {
                     }
                     
                     TextField("", text: $correo).multilineTextAlignment(.leading)
+                        .foregroundColor(.white)
                 }
                 
                 Divider().frame(height: 1).background(Color("Dark-Cian")).padding(.bottom)
@@ -38,7 +39,7 @@ struct InicioSessionView: View {
                         Text(verbatim:"Escribe tu contraseña").font(.caption).foregroundColor(.gray)
                     }
                     
-                    SecureField("", text: $password).multilineTextAlignment(.leading)
+                    SecureField("", text: $password).multilineTextAlignment(.leading).foregroundColor(.white)
                 }
                 
                 Divider().frame(height: 1).background(Color("Dark-Cian")).padding(.bottom)
