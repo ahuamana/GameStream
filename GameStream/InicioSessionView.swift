@@ -10,6 +10,8 @@ import SwiftUI
 struct InicioSessionView: View {
     @State var correo = ""
     @State var password = ""
+    @State var isScreenActive : Bool = false
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -46,7 +48,10 @@ struct InicioSessionView: View {
                 
                 Text("¿Olvidates tu contraseña?").font(.footnote).frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(Color("Dark-Cian")).padding(.bottom, 52)
                 
-                Button(action: iniciarSession, label: {
+                Button(action: {
+                    iniciarSession()
+                    isScreenActive = true
+                }, label: {
                     Text("INICIAR SESSIÓN")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -93,6 +98,10 @@ struct InicioSessionView: View {
                 
             }
             
+            //Navigate To Home
+            .navigationDestination(isPresented: $isScreenActive) {
+                Home()
+            }
             
         }
     }
@@ -100,6 +109,7 @@ struct InicioSessionView: View {
 
 func iniciarSession() {
     print("Estoy iniciando session")
+    
 }
 
 func loginWithFacebook(){

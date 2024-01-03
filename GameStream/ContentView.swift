@@ -9,24 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var goToHome = false
+    
     var body: some View {
-        ZStack {
+        NavigationStack {
+            ZStack {
+                Color(red: 18/255, green: 31/255, blue: 61/255, opacity: 1).ignoresSafeArea()
+                
+                VStack {
+                    
+                    Spacer()
+                    
+                    Image("appLogo").resizable().aspectRatio(contentMode: .fit).frame(width: 185).padding(.bottom, 54)
+                    LoginView()
+                
+                }.padding(.horizontal, 25)
             
-            Color(red: 18/255, green: 31/255, blue: 61/255, opacity: 1).ignoresSafeArea()
-            
-            VStack {
-                
-                
-                Spacer()
-                
-                Image("appLogo").resizable().aspectRatio(contentMode: .fit).frame(width: 185).padding(.bottom, 54)
-                
-                
-                LoginView()
-            
-            }.padding(.horizontal, 25)
-           
-        }
+            }
+        }.navigationBarHidden(true)
+        
+    
     }
 }
 
