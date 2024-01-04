@@ -15,6 +15,7 @@
 		0B336ABD2B3F6C9400CFCF48 /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B336ABC2B3F6C9400CFCF48 /* RegistroView.swift */; };
 		0B9853292B402B6100CC2897 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9853282B402B6100CC2897 /* Home.swift */; };
 		0B98532B2B402E6B00CC2897 /* InicioSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98532A2B402E6B00CC2897 /* InicioSessionView.swift */; };
+		0BD1AF4A2B4599DE003CEFE9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1AF492B4599DE003CEFE9 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		0B336ABC2B3F6C9400CFCF48 /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
 		0B9853282B402B6100CC2897 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0B98532A2B402E6B00CC2897 /* InicioSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSessionView.swift; sourceTree = "<group>"; };
+		0BD1AF492B4599DE003CEFE9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		0B336AAB2B3EF76E00CFCF48 /* GameStream */ = {
 			isa = PBXGroup;
 			children = (
+				0BD1AF482B4599CC003CEFE9 /* Utils */,
 				0B336AAC2B3EF76E00CFCF48 /* GameStreamApp.swift */,
 				0B336AAE2B3EF76E00CFCF48 /* ContentView.swift */,
 				0B336ABA2B3F69C100CFCF48 /* LoginView.swift */,
@@ -77,6 +80,14 @@
 				0B336AB32B3EF76F00CFCF48 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0BD1AF482B4599CC003CEFE9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0BD1AF492B4599DE003CEFE9 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				0B336ABB2B3F69C100CFCF48 /* LoginView.swift in Sources */,
 				0B98532B2B402E6B00CC2897 /* InicioSessionView.swift in Sources */,
 				0B336AAF2B3EF76E00CFCF48 /* ContentView.swift in Sources */,
+				0BD1AF4A2B4599DE003CEFE9 /* Utils.swift in Sources */,
 				0B9853292B402B6100CC2897 /* Home.swift in Sources */,
 				0B336AAD2B3EF76E00CFCF48 /* GameStreamApp.swift in Sources */,
 				0B336ABD2B3F6C9400CFCF48 /* RegistroView.swift in Sources */,
