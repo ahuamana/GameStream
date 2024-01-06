@@ -33,7 +33,7 @@ struct Home: View {
                     Text("Perfil") }
                 .tag(0)
             
-            Text("Pantalla Juegos")
+            GamesView()
                 .tabItem {
                     Image(systemName: "gamecontroller")
                     Text("Juegos") }
