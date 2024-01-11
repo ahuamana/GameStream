@@ -57,7 +57,7 @@ struct Home: View {
 
 struct HomeChild : View {
     
-    @State var textoBusqueda = ""
+    
     
     var body : some View {
         ZStack {
@@ -76,31 +76,8 @@ struct HomeChild : View {
                         
                         Spacer().frame(height: 28)
                         
-                        // Componente buscar
-                        HStack {
-                            Button(action: busqueda, label: {
-                                Image(systemName: "magnifyingglass")
-                                    .resizable()
-                                    .foregroundColor(textoBusqueda.isEmpty ? .yellow : Color("Dark-Cian"))
-                                    .frame(width: 25, height: 25)
-                                    .aspectRatio(contentMode: .fit)
-                            })
-                            
-                            ZStack(alignment: .leading) {
-                                
-                                if textoBusqueda.isEmpty {
-                                    Text ("Buscar un video").foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/225, opacity:1))
-                                        .font(.system(size: 14))
-                                }
-                                
-                                TextField("", text: $textoBusqueda).foregroundColor(.white)
-                                    .font(.system(size: 14))
-                                
-                            }
-                        }.padding([.bottom, .top, .leading], 11)
-                            .background(Color("Blue-Gray"))
-                            .clipShape(Capsule())
-                        
+                        // Componente buscar -- beginning
+                    
                         SubModuleHome()
                         
                         
@@ -111,12 +88,16 @@ struct HomeChild : View {
         .navigationBarBackButtonHidden(true)
     }
     
-    func busqueda() {
+    /*func busqueda() {
         print("El usuurio esta buscando \(textoBusqueda)")
-    }
+    }*/
 }
 
 struct SubModuleHome : View {
+    
+    @State var textoBusqueda = ""
+    
+    @State var isGameInfoEmpty = false
     
     @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
     @State var isPlayerActive = false
@@ -125,6 +106,37 @@ struct SubModuleHome : View {
         
     var body : some View {
         VStack {
+            
+            //Busqueda
+            HStack {
+                Button(action: {
+                    watchGame(name: textoBusqueda)
+                }, label: {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .foregroundColor(textoBusqueda.isEmpty ? .yellow : Color("Dark-Cian"))
+                        .frame(width: 25, height: 25)
+                        .aspectRatio(contentMode: .fit)
+                }).alert(isPresented: $isGameInfoEmpty) {
+                    Alert(title: Text("Error"), message: Text("No se encontro el juego"), dismissButton: .default(Text("Entendido")))
+                }
+                
+                
+                ZStack(alignment: .leading) {
+                    
+                    if textoBusqueda.isEmpty {
+                        Text ("Buscar un video").foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/225, opacity:1))
+                            .font(.system(size: 14))
+                    }
+                    
+                    TextField("", text: $textoBusqueda).foregroundColor(.white)
+                        .font(.system(size: 14))
+                    
+                }
+            }.padding([.bottom, .top, .leading], 11)
+                .background(Color("Blue-Gray"))
+                .clipShape(Capsule())
+            
             Text("LOS MÁS POPULARES")
                 .font(.title3)
                 .foregroundColor(.white)
@@ -322,7 +334,16 @@ struct SubModuleHome : View {
         
         
     }
+    
+    func watchGame(name:String) {
+        print("Buscar juego")
+        isGameInfoEmpty = true
+    }
+    
 }
+
+
+
 
 func goToFPS () {
     
