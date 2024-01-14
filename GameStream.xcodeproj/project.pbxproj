@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B08F0E12B5240B3005C3CA6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B08F0E02B5240B3005C3CA6 /* FavoritesView.swift */; };
 		0B336AAD2B3EF76E00CFCF48 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B336AAC2B3EF76E00CFCF48 /* GameStreamApp.swift */; };
 		0B336AAF2B3EF76E00CFCF48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B336AAE2B3EF76E00CFCF48 /* ContentView.swift */; };
 		0B336AB12B3EF76F00CFCF48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B336AB02B3EF76F00CFCF48 /* Assets.xcassets */; };
 		0B336AB42B3EF76F00CFCF48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B336AB32B3EF76F00CFCF48 /* Preview Assets.xcassets */; };
 		0B336ABB2B3F69C100CFCF48 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B336ABA2B3F69C100CFCF48 /* LoginView.swift */; };
 		0B336ABD2B3F6C9400CFCF48 /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B336ABC2B3F6C9400CFCF48 /* RegistroView.swift */; };
+		0B801EF12B53571C00AF41A3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B801EF02B53571C00AF41A3 /* ProfileView.swift */; };
 		0B9853292B402B6100CC2897 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9853282B402B6100CC2897 /* Home.swift */; };
 		0B98532B2B402E6B00CC2897 /* InicioSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98532A2B402E6B00CC2897 /* InicioSessionView.swift */; };
 		0BA54F982B504D0C00B3387D /* SearchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA54F972B504D0C00B3387D /* SearchGame.swift */; };
@@ -25,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B08F0E02B5240B3005C3CA6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		0B336AA92B3EF76E00CFCF48 /* GameStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B336AAC2B3EF76E00CFCF48 /* GameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStreamApp.swift; sourceTree = "<group>"; };
 		0B336AAE2B3EF76E00CFCF48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		0B336AB32B3EF76F00CFCF48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B336ABA2B3F69C100CFCF48 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0B336ABC2B3F6C9400CFCF48 /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
+		0B801EF02B53571C00AF41A3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0B9853282B402B6100CC2897 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0B98532A2B402E6B00CC2897 /* InicioSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSessionView.swift; sourceTree = "<group>"; };
 		0BA54F972B504D0C00B3387D /* SearchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGame.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				0BE2AF992B46DA8700E34929 /* GamesView.swift */,
 				0BFB1D3C2B4C20B700F78560 /* GameView.swift */,
 				0BA54F972B504D0C00B3387D /* SearchGame.swift */,
+				0B08F0E02B5240B3005C3CA6 /* FavoritesView.swift */,
+				0B801EF02B53571C00AF41A3 /* ProfileView.swift */,
 			);
 			path = Vistas;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			files = (
 				0BE2AFA12B46DC4E00E34929 /* ViewModel.swift in Sources */,
 				0BE2AF9F2B46DC3200E34929 /* Model.swift in Sources */,
+				0B08F0E12B5240B3005C3CA6 /* FavoritesView.swift in Sources */,
 				0B336ABB2B3F69C100CFCF48 /* LoginView.swift in Sources */,
 				0B98532B2B402E6B00CC2897 /* InicioSessionView.swift in Sources */,
 				0BE2AF9A2B46DA8700E34929 /* GamesView.swift in Sources */,
@@ -218,6 +225,7 @@
 				0BD1AF4A2B4599DE003CEFE9 /* Utils.swift in Sources */,
 				0B9853292B402B6100CC2897 /* Home.swift in Sources */,
 				0B336AAD2B3EF76E00CFCF48 /* GameStreamApp.swift in Sources */,
+				0B801EF12B53571C00AF41A3 /* ProfileView.swift in Sources */,
 				0B336ABD2B3F6C9400CFCF48 /* RegistroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

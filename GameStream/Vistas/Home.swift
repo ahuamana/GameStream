@@ -27,7 +27,7 @@ struct Home: View {
         
         TabView(selection: $tabSeleccionado) {
             
-            Text("Perfil")
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Perfil") }
@@ -45,7 +45,7 @@ struct Home: View {
                     Text("Inicio")}
                 .tag(2)
             
-            Text("Pantalla Favoritos")
+           FavoritesView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favoritos")}
