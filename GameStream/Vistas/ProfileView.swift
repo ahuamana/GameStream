@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @State var nombreUsuario = "Lorem"
+    @State var imagePerfil : UIImage = UIImage(named: "picture")!
     
     var body: some View {
         ZStack {
@@ -26,11 +27,17 @@ struct ProfileView: View {
                 
                 VStack {
                     
-                    Image("picture")
+                    Image(uiImage: imagePerfil)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 118, height: 118)
                         .clipShape(Circle())
+                    
+                    Text(nombreUsuario)
+                        .font(.title3)
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .center)
                     
                 }.padding(EdgeInsets(top: 16, leading: 0, bottom: 32, trailing: 0))
                 
@@ -42,16 +49,41 @@ struct ProfileView: View {
                     .padding()
                 
                 ModuloAjustes()
+                
+                Spacer()
             }
             
             
         }.onAppear {
+            
+            //recuperar imagenes
+            if(returnUiImage(named: "fotoperfil") != nil) {
+                imagePerfil = returnUiImage(named: "fotoperfil")!
+            }
+            
+            
             //print datos de usuario
+            print("Revisando si tengo datos de usuario")
+            
+            if UserDefaults.standard.object(forKey: "datosUsuario") != nil {
+                nombreUsuario = UserDefaults.standard.stringArray(forKey: "datosUsuario")![2]
+            }else {
+                print("No se encontro informacion del usuario")
+            }
         }
         
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }
+    
+    func returnUiImage (named:String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false){
+            
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)       }
+        
+        return nil
+    }
+    
 }
 
 struct ModuloAjustes : View {
@@ -135,6 +167,9 @@ struct EditProfileView: View {
     @State var password = ""
     @State var confirmPassword = ""
     
+    @State var imagePerfil:Image? = Image("picture")
+    @State var isCameraActive = false
+    
     
     var body: some View {
         ZStack {
@@ -157,8 +192,11 @@ struct EditProfileView: View {
 
                     }.padding(.horizontal)
                     
+                    
+                   
+                    
                     Button(action: {
-                        //TODO: tomar foto
+                        isCameraActive = true
                     }, label: {
                         ZStack {
                             Rectangle()
@@ -166,12 +204,16 @@ struct EditProfileView: View {
                                 .frame(width: 85, height: 85)
                                 .background(.black.opacity(0.25))
                                 .background(
-                                    Image("picture")
+                                    
+                                   imagePerfil!
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .frame(width: 85, height: 85)
                                         .clipped()
                                 ).cornerRadius(85)
+                                .sheet(isPresented: $isCameraActive) {
+                                    SUImagePickerView(image: $imagePerfil, isPresented: $isCameraActive)
+                                }
                             
                             
                             Image(systemName: "camera").foregroundColor(.white)
@@ -234,7 +276,10 @@ struct EditProfileView: View {
                         Divider().frame(height: 1).background(Color("Dark-Cian")).padding(.bottom)
                     }.padding(.horizontal)
                     
-                    Button(action: actualizarDatos, label: {
+                    Button(action: {
+                        actualizarDatos(email: correo, pass: password, name: confirmPassword)
+                        
+                    }, label: {
                         Text("ACTUALIZAR DATOS")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -256,8 +301,13 @@ struct EditProfileView: View {
     }
 }
 
-func actualizarDatos() {
-    print("Actualizando datos")
+func actualizarDatos(email:String, pass:String, name:String) {
+    
+    let objetoActualizarDatos = SaveData()
+    
+    let resultado = objetoActualizarDatos.guardarDatos(correo: email, contrasena: pass, nombre: name) //resultado de guardar datos
+    
+    print("Se guardaron los datos con exito")
 }
 
 struct EditProfileView_Previews: PreviewProvider {
