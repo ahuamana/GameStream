@@ -10,7 +10,7 @@ import SwiftUI
 struct OffsetPositionView: View {
     var body: some View {
         VStack {
-            Offsets()
+            GeometryReaderView()
         }
     }
 }
@@ -38,8 +38,23 @@ struct Offsets:View {
     }
 }
 
+struct GeometryReaderView : View {
+    var body:some View {
+        GeometryReader { geometryProxy in
+            VStack {
+                Image("picture")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: geometryProxy.size.width, height:200)
+    
+            }
+        }
+        
+    }
+}
+
 struct OffsetPositionView_Previews: PreviewProvider {
     static var previews: some View {
-        Positions()//OffsetPositionView()
+        GeometryReaderView()//OffsetPositionView()
     }
 }
