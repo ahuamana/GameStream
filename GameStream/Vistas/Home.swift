@@ -97,6 +97,8 @@ struct SubModuleHome : View {
     
     @State var textoBusqueda = ""
     
+    var dispositivo = UIDevice.current.model // this show us which devide is
+    
     @State var isGameInfoEmpty = false
     
     @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
